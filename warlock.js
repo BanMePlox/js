@@ -1,29 +1,20 @@
-var iFileName = "Inevitablewarlock.js"; // Optional; This is how the file will be named in the sheet if you import it as a file and not copy-paste its content. Only the first occurrence of this variable will be used
+var iFileName = "Inevitablewarlock.js";
 RequiredSheetVersion(12.999);
 
-AddSubClass( // this is the function you will be calling to add the variant
-
-    "warlock", // Parent Class object name; Required; This has to be the exact name of the class of which you are adding a subclass. Look for the name of the class in the ClassList variable. For the default 12 classes these names are: "barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", and "wizard"
-
-    "inevitable", // Object name; Required; The name the entry in the ClassSubList will have. This can be anything, it is just something that the sheet uses to reference the new entry and it will never be printed anywhere
-
-    { // don't forget this opening bracket
+AddSubClass(
+    "warlock",
+    "inevitable", {
 
         regExpSearch: /specialme/i,
 
-        subname: "The inevitable", //required; the name of the subclass
+        subname: "The inevitable",
 
-        source: ["HB", 0], //required; the source and the page number. "HB" stands for homebrew. See the "Complete SourceList" for an overview of sources that are already defined. Or define a new source using the "Homebrew Syntax - SourceList.js". // This can be an array of arrays to indicate the things appears in multiple sources. For example, if something appears on page 7 of the Elemental Evil Player's Companion and on page 115 of the Sword Coast Adventure Guide, use the following: [["E", 7], ["S", 115]]
-
-        // after defining the above three, you don't need to define anything more, but you can. Defining more stuff will overwrite the entries as they are given in the ClassList. So if you do not need something to be different than the basics of the class (for example, you subclass uses the same spellcasting ability), then you don't need to define it again.
-        // For the syntax of how to define more stuff, look at the ClassList (see "Homebrew Syntax - ClassList.js"). You can define all the same stuff in the same way. The below are a couple of examples:
-
-        fullname: "Inevitable of Warlock", //if no fullname is defined it will be automatically generated as "Class Name (Subclass name)". In this example that would be: "MyClass (Path of SpecialMe)"
+        source: ["HB", 0],
+        fullname: "Inevitable of Warlock",
         spellcastingExtra: ["longstrider", "magic missile", "knock", "silence", "haste", "sending", "locate creature", "resilient sphere", "geas", "wall of force"],
 
-        features: { //unlike the other entries, "features" will not delete all the features from the ClassList, but will add to the features in the ClassList. For this to work properly, the feature object has to be named "subclassfeatureX" and not something appropriate for the feature. The below are the features of the purple Dragon Knight
-
-            "subclassfeature1": { // has to start with "subclassfeature" followed by a number. Note that the name has to be unique for this subclass, but it can be the same name as one of the features of the class in the ClassList variable. If you use the same name as a feature in the ClassList variable, it will be overwritten with this entry
+        features: {
+            "subclassfeature1": {
                 name: "Mark of Justice",
                 source: ["HB", 0],
                 minlevel: 1,
