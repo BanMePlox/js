@@ -62,7 +62,7 @@ AddSubClass("warlock", "the hexblade", { // this code was translated by BanMePlo
             }
         },
         "subclassfeature6": {
-            name: "Accursed Specter",
+            name: "Espectro maldito",
             source: [
                 ["X", 56]
             ],
@@ -78,59 +78,58 @@ AddSubClass("warlock", "the hexblade", { // this code was translated by BanMePlo
             usages: 1,
             recovery: "long rest",
             creaturesAdd: [
-                ["Accursed Specter", true]
+                ["Espectro maldito", true]
             ],
-            //JA SU PUTA MADRE VA A TRADUCIR TODO ESTO, Y UNA POLLA. MEJOR DEJO LA HABILIDAD EN INGLES Y TRADUZCO LA DESCRIPCIÓN SOLO. SI ALGÚN DÍA ME ANIMO YA LO HARÉ.
             creatureOptions: [{
-                name: "Accursed Specter",
-                nameAlt: ["Accursed Spectre"],
+                name: "Espectro maldito",
+                nameAlt: ["Espectro maldito"],
                 source: [
                     ["X", 56]
                 ],
                 size: 3,
-                type: "Undead",
-                alignment: "Chaotic Evil",
+                type: "No muerto",
+                alignment: "Caótico malvado",
                 ac: 12,
                 hp: 22,
                 hd: [5, 8],
-                speed: "fly 50 ft (hover)",
+                speed: "Vuelo 50 ft (planeo)",
                 scores: [1, 14, 11, 10, 10, 12],
-                damage_resistances: "acid; cold; fire; lightning; thunder; bludgeoning, piercing, and slashing from nonmagical weapons",
-                damage_immunities: "necrotic, poison",
-                condition_immunities: "charmed, exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious",
-                senses: "Darkvision 60 ft; While in sunlight, disadv. on Wis (Perception) checks using sight",
+                damage_resistances: "acido; frio; fuego; rayo; trueno; contundente, perforante, y cortante de armas no mágicas",
+                damage_immunities: "necrótico, veneno",
+                condition_immunities: "atraido, agotamiento, agarrado, paralizdo, petrificado, envenenado, tumbado, agarrado, inconsciente",
+                senses: "Vision en la oscuridad 60 ft; Bajo el sol, desventaja en tiradas de Sab(Percepcion) usando la vista",
                 passivePerception: 10,
-                languages: "all languages it knew in life, but can't speak",
+                languages: "lenguajes conocidos en vida, pero no puede hablar",
                 challengeRating: "1",
                 proficiencyBonus: 2,
                 attacksAction: 1,
                 attacks: [{
-                    name: "Life Drain",
+                    name: "Drenaje de vida",
                     ability: 2,
-                    damage: [3, 6, "necrotic"],
+                    damage: [3, 6, "necrótico"],
                     range: "Melee (5 ft)",
-                    description: "DC 10 Con save or HP max reduced by same as damage taken until a long rest",
+                    description: "Salvación de DC 10 Con  o reduce la salud máxima igual al daño recibido hasta el próximo descanso largo",
                     modifiers: ["max(oCha|0)", ""],
                     abilitytodamage: false,
-                    tooltip: "A target of the specter's life drain must succeed on a DC 10 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the creature finishes a long rest. The target dies if this effect reduces its hit point maximum to 0."
+                    tooltip: "Salvación de DC 10 Con  o reduce la salud máxima igual al daño recibido hasta el próximo descanso largo",
                 }],
                 traits: [{
-                    name: "Incorporeal Movement",
-                    description: "The specter can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object."
+                    name: "Movimiento incorpóreo",
+                    description: "El espectro puede moverse a través de criaturas y objetos como si fueran terreno difícil.Recibe 5 (1d10) daño de fuerza si termina el turno dentro de un objeto."
                 }, {
-                    name: "Sunlight Sensitivity",
-                    description: "While in sunlight, the specter has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+                    name: "Hipersensibilidad solar",
+                    description: "Bajo el sol, el espectro tiene desventajas en tiradas de ataque, igual que en tiradas de Sab(Percepcion) para tiradas que dependan de la vista"
                 }, {
-                    name: "Life Drain",
-                    description: "A target of the specter's life drain must succeed on a DC 10 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the creature finishes a long rest. The target dies if this effect reduces its hit point maximum to 0."
+                    name: "Drenaje de vida",
+                    description: "Salvación de DC 10 Con  o reduce la salud máxima igual al daño recibido hasta el próximo descanso largo"
                 }],
                 features: [{
-                    name: "Bound Spirit",
-                    description: "The specter obeys my verbal commands and remains in my service until the end of my next long rest, at which point it vanishes to the afterlife. It acts on its own turn with its own initiative."
+                    name: "Espíritu atado",
+                    description: "El espectro obedece mis ordenes verbales y permanece a mi servicio hasta el final de mi próximo descanso largo, punto en el que desaparece. Tiene su propia iniciativa y actua en su propio turno, aunque obedece tus ordenes verbales."
                 }],
-                header: "Bound Spirit",
+                header: "Espíritu atado",
                 eval: function(prefix) {
-                    AddTooltip(prefix + 'Comp.Use.HP.Temp', "The accursed specter gains half my warlock level as temporary HP when created.");
+                    AddTooltip(prefix + 'Comp.Use.HP.Temp', "El espectro maldito gana vida temporal igual a la mitad de mi nivel de brujo.");
                 },
                 removeeval: function(prefix) {
                     AddTooltip(prefix + 'Comp.Use.HP.Temp', "");
