@@ -1,5 +1,4 @@
 var iFileName = "Inevitablewarlock.js";
-RequiredSheetVersion(12.999);
 
 AddSubClass(
     "warlock",

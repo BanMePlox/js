@@ -1,5 +1,4 @@
-var iFileName = "undyingwarlockrework.js"; // Optional; This is how the file will be named in the sheet if you import it as a file and not copy-paste its content. Only the first occurrence of this variable will be used
-RequiredSheetVersion(12.999); // Optional; This is the minimum required version number of the sheet for the script to work. If the sheet being used to import the script is of an earlier version, the user will be warned
+var iFileName = "undyingwarlockrework.js";
 
 AddSubClass(
 

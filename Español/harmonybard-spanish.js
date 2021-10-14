@@ -1,5 +1,4 @@
 var iFileName = "HarmonyBard.js";
-RequiredSheetVersion(12.999);
 
 AddSubClass(
     "bard",
