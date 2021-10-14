@@ -14,6 +14,8 @@ AddSubClass(
         spellcastingExtra: ["false life", "ray of sickness", "blindness/deafness", "silence", "feign death", "revivify", "aura of life", "death ward", "legend lore", "raise dead"],
 
         features: {
+
+
             //Necesito saber como hacer para modificar la distancia del cantrip por subclase. 
             "subclassfeature1": {
                 name: "Among the Dead",
