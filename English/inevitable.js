@@ -4,13 +4,13 @@ AddSubClass(
     "warlock",
     "inevitable", {
 
-        regExpSearch: /specialme/i,
+        regExpSearch: /inevitable/i,
 
-        subname: "The inevitable",
+        subname: "the Inevitable",
 
         source: ["HB", 0],
-        fullname: "Inevitable of Warlock",
-        spellcastingExtra: ["longstrider", "magic missile", "knock", "silence", "haste", "sending", "locate creature", "resilient sphere", "geas", "wall of force"],
+        fullname: "Inevitable Warlock",
+        spellcastingExtra: ["longstrider", "magic missile", "knock", "silence", "haste", "sending", "locate creature","otiluke's resilient sphere", "geas", "wall of force"],
 
         features: {
             "subclassfeature1": {
@@ -22,13 +22,13 @@ AddSubClass(
                 recovery: "Long rest",
 
             },
-            "subclassfeature1.2": {
+            "subclassfeature12": {
                 name: "Rule of Law",
                 source: ["HB", 0],
                 minlevel: 1,
                 description: "\n  " + "You learn the command spell. It counts as a warlock spell for you, but doesn’t count against the number of spells you know." + "\n     " + "You can cast command as a bonus action once without expending a spell slot. You can’t do so again until you finish a short or long rest.",
                 usages: 1,
-                recovery: "Short rest",
+                recovery: "Short Rest",
                 spellcastingBonus: {
                     spells: ["command"],
                     selection: ["command"],
@@ -40,8 +40,8 @@ AddSubClass(
                 minlevel: 6,
                 description: "\n   " + "You can impose law and order through the actions of those around you. When an ally you can see within 30 feet of you makes an ability check, attack roll, or saving throw, you can use your reaction to cause it to forgo rolling the d20 and treat the die as if it rolled 8 + your proficiency bonus." + "\n   " + "Once you use this feature, you can’t use it again until you finish a short or long rest. ",
                 usages: 1,
-                recovery: "Short rest",
-                action: ["reaction", ""]
+                recovery: "Short Rest",
+                action: ["reaction", ""],
 
             },
             "subclassfeature10": {
@@ -51,7 +51,7 @@ AddSubClass(
                 description: "\n   " + "You can declare your authority and punish those who deny it. You can cast the sanctuary spell once without expending a spell slot. Whenever a creature damages the target before the spell ends, you can use your reaction to cause that creature to take force damage equal to your warlock level. " + "\n   " + "If you are the target, dealing this damage doesn’t end the spell for you. Once you cast sanctuary in this way, you can’t do so again until you finish a short or long rest.",
                 spellcastingBonus: {
                     spells: ["sanctuary"],
-                    selection: ["command"],
+                    selection: ["sanctuary"],
                     firstCol: "SR",
 
                 },
