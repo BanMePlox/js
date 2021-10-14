@@ -57,7 +57,7 @@ AddSubClass("monk", "mundanity", {
             source: ["HB", 0],
             minlevel: 17,
             description: "\n   " + "When you make a saving throw against a spell or other magical effect, you can use your reaction to gain advantage on the saving throw and resistance to damage from the spell. If the effect is a spell, you also regain a number of ki points equal to the level of the spell cast." + +"\n   " + "Once you have used this ability, you may not do so again until you finish a long rest.",
-            recovery: "long rest",
+            recovery: "LR",
             usages: 1,
             spellcastingBonus: {
                 spells: ["antimagic field"],
