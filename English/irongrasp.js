@@ -9,12 +9,11 @@ AddSubClass(
     {
 
 
-        regExpSearch: /specialme/i,
+        regExpSearch: /irongrasp/i,
 
         subname: "Way of Iron Grasp",
 
         source: ["HB", 0],
-
 
         fullname: "Way of Iron Grasp Monk",
 
@@ -26,6 +25,16 @@ AddSubClass(
                 source: ["HB", 0],
                 minlevel: 3,
                 description: "\n   " + "You can disrupt the flow of ki in another creature’s body with grappling techniques that prevent it from moving and harming allies." + "\n   " + "You master special martial arts techniques used to disable opponents and safeguard allies. Whenever you hit a creature with one of the attacks granted by your Flurry of Blows and that creature is no more than one size category larger than you, you can force the creature to make a Strength or Dexterity saving throw (its choice) against your ki save DC. On a failed save, the target is grappled by you. You must use a free hand for the grapple as normal" + "\n" + "While grappled in this way, the creature has disadvantage on attack rolls against targets other than you. If the creature uses its action to try to escape the grapple, it makes its ability check against your ki save DC. When it does so, you can expend 1 ki point as a reaction to impose disadvantage on its ability check.",
+            },
+            "subclassfeature3.1": {
+                name: "Tempered Soul",
+                source: ["HB", 0],
+                minlevel: 3,
+                description: "\n    " + "While you benefit from your Unarmored Defense feature, you gain a +1 bonus to AC.",
+                extraAC : {
+                    mod : 1,
+                    text : "I gain a +1 bonus to AC",
+                }
             },
             "subclassfeature6": {
                 name: "Ethereal Grasp",
