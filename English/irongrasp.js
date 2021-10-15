@@ -4,7 +4,7 @@ AddSubClass(
 
     "monk",
 
-    "irongraspmonk",
+    "irongrasp",
 
     {
 
@@ -15,7 +15,7 @@ AddSubClass(
 
         source: ["HB", 0],
 
-        fullname: "Way of Iron Grasp Monk",
+        fullname: "Iron Grasp Monk",
 
 
         features: {
@@ -31,10 +31,10 @@ AddSubClass(
                 source: ["HB", 0],
                 minlevel: 3,
                 description: "\n    " + "While you benefit from your Unarmored Defense feature, you gain a +1 bonus to AC.",
-                extraAC : {
-                    mod : 1,
-                    text : "I gain a +1 bonus to AC",
-                }
+                extraAC: {
+                    mod: 1,
+                    text: "I gain a +1 bonus to AC",
+                },
             },
             "subclassfeature6": {
                 name: "Ethereal Grasp",
