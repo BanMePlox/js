@@ -29,40 +29,15 @@ AddSubClass( // this is the function you will be calling to add the variant
                 name: "Eldritch Transformation",
                 source: ["TCEE", 7],
                 minlevel: 3,
-                description: "\n   " + "You begin to perform vile rituals to improve your capabilities and strike terror into the hearts of your foes. These manifest as horrific physical transformations during the height of your fury. When you rage, choose a transformation from one of the options detailed below. Your choice lasts for the duration of the rage.",
-                "Bloated Form": {
-                    name: "Bloated Form",
-                    extraname: "Eldritch Transformation",
-                    source: ["TCEE", 7],
-                    description: "" + "\n   " + "While raging, your body swells to an unnatural bloated state. You increase in size by one category—from Medium to Large, for example, your carrying capacity is doubled, and you have advantage on saving throws that would move you or knock you prone.",
-                },
-                "Corrupted Flesh": {
-                    name: "Corrupted Flesh",
-                    extraname: "Eldritch Transformation",
-                    source: ["TCEE", 7],
-                    description: "" + "\n   " + "While raging, your skin hardens in a scaly or scab-like manner, granting you a +1 bonus to your AC. As a reaction, when you fail a Constitution or Dexterity saving throw you can shed the skin to reroll, using the new result. If you do so, the bonus to your AC ends.",
-                },
-                "Reprehensible Stench": {
-                    name: "Reprehensible Stench",
-                    extraname: "Eldritch Transformation",
-                    source: ["TCEE", 7],
-                    description: "" + "\n   " + "While raging, you emit a foul-scented cloud of decaying matter, potentially sickening those in an area around you. When a creature within 5 feet of you hits you with a weapon attack, it takes 1d4 poison damage. The damage die increases when you reach certain levels in this class, increasing to 1d6 at 10th level, 1d8 at 15th level, and 1d10 at 20th level.",
-                    additional: levels.map(function(n) {
-                        return "1d" + (n < 5 ? 4 : n < 10 ? 6 : n < 15 ? 8 : n = 20 ? 10 : 10);
-                    }),
-                },
-                autoSelectExtrachoices: [{
-                        extrachoice: "Bloated Form"
-                    },
-                    {
-                        extrachoice: "Corrupted Flesh"
-                    },
-                    {
-                        extrachoice: "Reprehensible Stench"
-                    }
-                ]
-
-
+                description: "\n   " + "You begin to perform vile rituals to improve your capabilities and strike terror into the hearts of your foes. These manifest as horrific physical transformations during the height of your fury. When you rage, choose a transformation from one of the options detailed on the notes page. Your choice lasts for the duration of the rage.",
+                    toNotesPage : [{
+                        name : "Eldritch Transformation Options",
+                        note : [
+                            "\nCorrupted Flesh: While raging, your skin hardens in a scaly or scab-like manner, granting you a +1 bonus to your AC. As a reaction, when you fail a Constitution or Dexterity saving throw you can shed the skin to reroll, using the new result. If you do so, the bonus to your AC ends.",
+                            "\nBloated Form: While raging, your body swells to an unnatural bloated state. You increase in size by one category—from Medium to Large, for example, your carrying capacity is doubled, and you have advantage on saving throws that would move you or knock you prone.",
+                            "\nReprehensible Stench: While raging, you emit a foul-scented cloud of decaying matter, potentially sickening those in an area around you. When a creature within 5 feet of you hits you with a weapon attack, it takes 1d4 poison damage. The damage die increases when you reach certain levels in this class, increasing to 1d6 at 10th level, 1d8 at 15th level, and 1d10 at 20th level.",
+                                                   ]
+                    }],
             },
             "subclassfeature6": {
                 name: "Aberrant Form",
@@ -70,14 +45,17 @@ AddSubClass( // this is the function you will be calling to add the variant
                 minlevel: 6,
                 description: "\n   " + "Choose Unsightly Visage,Gruesome Appendage or Slithering Skin using the \"Choose Feature\" button above",
                 choices: ["Unsightly Visage", "Gruesome Appendage", "Slithering Skin"],
-                "Unsightly Visage": {
+                "unsightly visage": {
+                    name: "Unsightly Visage",
                     description: "\n    " + "Your appearance takes on a permanent repulsive form—perhaps additional eyes on your neck or tiny tentacles across your face. You gain advantage on Charisma (Intimidation) checks but disadvantage on Charisma (Persuasion) checks against creatures that can see you.",
 
                 },
-                "Gruesome Appendage": {
+                "gruesome appendage": {
+                    name: "Gruesome Appendage",
                     description: "\n    " + "A partially-functional extra arm or tentacle grows from your torso. The appendage cannot wield weapons or a shield, but can manipulate simple objects. While the appendage is not carrying anything, you can use a bonus action to take the Use an Object action.",
                 },
-                "Slithering Skin": {
+                "slithering skin": {
+                    name: "Slithering Skin",
                     description: "\n    " + "Your body begins to produce an oily and repulsive slime. You have advantage on saving throws to avoid being grappled or restrained as well as advantage on ability checks made to escape a grapple.",
                 },
             },
@@ -122,4 +100,5 @@ AddSubClass( // this is the function you will be calling to add the variant
             },
         }
     }
+
 );
