@@ -1,38 +1,19 @@
-/*	-WHAT IS THIS?-
-	The script featured here is an explanation of how to make your own custom addition to MPMB's D&D 5e Character Tools.
-	To add your own content to the Character Sheet, use the syntax below and save it in a file. You can then import this file directly to the sheet using the "Import" button and "Import/Export" bookmark.
-	There you can either import the file as a whole or just copy the text into a dialogue.
+var iFileName = "herbalist.js"; 
+RequiredSheetVersion(12.999);
 
-	-KEEP IN MIND-
-	Note that you can add as many custom codes as you want, either by importing consecutive files or pasting the scripts into the dialogue.
-	It is recommended to enter the code in a freshly downloaded or reset sheet before adding any other information so that there won't be any conflicts.
-*/
-
-/*	-INFORMATION-
-	Subject:	Subclass (a.k.a. Archetype)
-	Effect:		This is the syntax for adding a new subclass/archetype to a class that is defined in the sheet, or to a class you made yourself
-	Sheet:		v12.999 (2017-11-29)
-*/
-
-var iFileName = "herbalist.js"; // Optional; This is how the file will be named in the sheet if you import it as a file and not copy-paste its content. Only the first occurrence of this variable will be used
-RequiredSheetVersion(12.999); // Optional; This is the minimum required version number of the sheet for the script to work. If the sheet being used to import the script is of an earlier version, the user will be warned
-
-AddSubClass( // this is the function you will be calling to add the variant
+AddSubClass( 
 
     "ranger", // Parent Class object name; Required; This has to be the exact name of the class of which you are adding a subclass. Look for the name of the class in the ClassList variable. For the default 12 classes these names are: "barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", and "wizard"
 
     "herbalist", // Object name; Required; The name the entry in the ClassSubList will have. This can be anything, it is just something that the sheet uses to reference the new entry and it will never be printed anywhere
 
-    { // don't forget this opening bracket
+    {
 
         regExpSearch: /herbalist/i, //required; regular expression of what to look for (i.e. now it looks for any entry that has both the words "special" and "me" in it, disregarding capitalization). If this looks too complicated, just write: /specialme/i
 
         subname: "Herbalist", //required; the name of the subclass
 
         source: ["TCEE", 35], //required; the source and the page number. "HB" stands for homebrew. See the "Complete SourceList" for an overview of sources that are already defined. Or define a new source using the "Homebrew Syntax - SourceList.js". // This can be an array of arrays to indicate the things appears in multiple sources. For example, if something appears on page 7 of the Elemental Evil Player's Companion and on page 115 of the Sword Coast Adventure Guide, use the following: [["E", 7], ["S", 115]]
-
-        // after defining the above three, you don't need to define anything more, but you can. Defining more stuff will overwrite the entries as they are given in the ClassList. So if you do not need something to be different than the basics of the class (for example, you subclass uses the same spellcasting ability), then you don't need to define it again.
-        // For the syntax of how to define more stuff, look at the ClassList (see "Homebrew Syntax - ClassList.js"). You can define all the same stuff in the same way. The below are a couple of examples:
 
         fullname: "Herbalist Ranger", //if no fullname is defined it will be automatically generated as "Class Name (Subclass name)". In this example that would be: "MyClass (Path of SpecialMe)"
 
@@ -66,14 +47,14 @@ AddSubClass( // this is the function you will be calling to add the variant
                     name: "Burning Beeswax",
                     extraname: "Concotion",
                     source: ["TCEE", 35],
-                    description: "" + "\n   " + "This caustic beeswax must be carefully handled. As an action, the wax can be applied to a weapon or piece of ammunition. For the next minute, a hit with the weapon or ammunition deals an additional 2d4 acid damage.",
+                    description:+ "\n   " + "This caustic beeswax must be carefully handled. As an action, the wax can be applied to a weapon or piece of ammunition. For the next minute, a hit with the weapon or ammunition deals an additional 2d4 acid damage.",
                     action: ["action"],
                 },
                 "Death Bell": {
                     name: "Death Bell",
                     extraname: "Concotion",
                     source: ["TCEE", 35],
-                    description: "" + "\n   " + "A foul tasting tonic that is said prevents the dying from slipping into death. A creature can ingest the tonic as a bonus action to gain advantage on death saving throws for 8 hours.",
+                    description: + "\n   " + "A foul tasting tonic that is said prevents the dying from slipping into death. A creature can ingest the tonic as a bonus action to gain advantage on death saving throws for 8 hours.",
                     action: ["bonus action"],
                 },
                 "Displacer Herb": {
@@ -156,38 +137,25 @@ AddSubClass( // this is the function you will be calling to add the variant
                     source: ["TCEE", 35],
                     description: "" + "\n   " + "These delicate spores can explode into tiny airborne barbs when struck. A creature can spend one minute applying them to a cloak or armor of a creature. The next time the creature is hit by a melee attack, the attacker takes 2d6 piercing damage.",
                 },
-                autoSelectExtrachoices: [{
-                        extrachoice: "Burning Beeswax"
-                    }, {
-                        extrachoice: "Death Bell"
-                    }, {
-                        extrachoice: "Displacer Herb"
-                    },
-                    {
-                        extrachoice: "Elfroot Granola"
-                    },
-                    {
-                        extrachoice: "Gnomeberry Juice"
-                    }, {
-                        extrachoice: "Hastening Sap"
-                    }, {
-                        extrachoice: "Hollowbone Tonic"
-                    }, {
-                        extrachoice: "Night Eye Berries"
-                    }, {
-                        extrachoice: "Poison-Purge Potion"
-                    }, {
-                        extrachoice: "Pond Leaf"
-                    }, {
-                        extrachoice: "Potent Musk"
-                    }, {
-                        extrachoice: "Shadow Rose Pollen"
-                    }, {
-                        extrachoice: "Slipstone Oil"
-                    }, {
-                        extrachoice: "Stinging Spores"
-                    },
-                ]
+                toNotesPage : [{
+                    name : "Salves and Tinctures",
+                    note : [
+                        "\n Burning Beeswax: This caustic beeswax must be carefully handled. As an action, the wax can be applied to a weapon or piece of ammunition. For the next minute, a hit with the weapon or ammunition deals an additional 2d4 acid damage.",
+                        "\n Death Bell: A foul tasting tonic that is said prevents the dying from slipping into death. A creature can ingest the tonic as a bonus action to gain advantage on death saving throws for 8 hours",
+                        "\n Displacer Herb: This rare herb seems to forever shift and shiver in the hand. A creature can consume the herb as a bonus action. Until the start of its next turn, the creature does not provoke opportunity attacks as its form becomes difficult to focus upon.",
+                        "\n Elfroot Granola: This recipe of simple nuts, fruit and nearby vegetation lightens the spirit and relieves tension. A creature that spends 1 minute consuming the food gains temporary hit points equal to 1d8 plus your wisdom modifier.",
+                        "\n Gnomeberry Juice: This iron-tasting extract from a rare fruit can temporarily shrink you in size. As a bonus action, a creature can consume the liquid to gain the Reduce effects of the Enlarge/Reduce spell for 10 minutes.",
+                        "\n Hastening Sap: This golden liquid is said to be sap from the trees of the Feywild, though it can be found on trees near portals to that realm. A creature can ingest it as a bonus action to gain an increase of 15 feet to their speed for the next minute.",
+                        "\n Hollowbone Tonic: Torn feathers float in this blueish liquid. A creature can consume the tonic as a bonus action, granting it resistance to falling damage and preventing any damage for falls of less than 30 feet for 8 hours.",
+                        "\n Night Eye Berries: These dark berries can allow temporary vision in the darkest of locations. As an action, a creature can squeeze the juice from these berries into its eyes to gain darkvision for 1 hour. If a creature already has darkvision, its range increases by 30 feet.",
+                        "\n Poison-Purge Potion: This vial of carefully distilled poison from local creatures and plants can forcibly remove toxins from the body. A creature can drink the potion as a bonus action to end the poisoned condition.",
+                        "\n Pond Leaf: This dried and twisted leaf reeks of pond water. A creature that chews on this leaf for 1 minute can breathe water and gains a swimming speed equal to its walking speed for 8 hours.",
+                        "\n Potent Musk: This mixture of animal glands can be used to calm a wild beast. A creature can apply the musk to their hands and clothing as an action, granting them advantage on Wisdom (Animal Handling) checks for 1 hour.",
+                        "\n Shadow Rose Pollen: This aromatic flower is known to calm the nerves and improve concentration. A creature can consume the pollen as an action to gain advantage on Dexterity (Stealth) checks for 1 hour.",
+                        "\n Slipstone Oil: This clear and slimy oil is difficult to procure and contain. A creature can spend 1 minute applying the oil to their person to gain advantage on saving throws against effects that would leave them grappled or restrained.",
+                        "\n Stinging Spores: These delicate spores can explode into tiny airborne barbs when struck. A creature can spend one minute applying them to a cloak or armor of a creature. The next time the creature is hit by a melee attack, the attacker takes 2d6 piercing damage.",
+                                               ]
+                }],
 
             },
             "subclassfeature7": {
@@ -210,7 +178,7 @@ AddSubClass( // this is the function you will be calling to add the variant
                 source: ["TCEE", 35],
                 minlevel: 15,
                 description: "\n   " + "You have learned to be able to quickly produce a number of powerful mixtures from your gathered herbs and medicines. Over the course of 10 minutes, you can create one of the following mixtures. This creation loses its potency after 24 hours. Once you use this feature you cannot use it again until you finish a long rest.",
-                recovery: "Long Rest",
+                recovery: "LR",
                 usages: 1,
                 "Refreshing Herbs": {
                     name: "Refreshing Herbs",
@@ -240,19 +208,15 @@ AddSubClass( // this is the function you will be calling to add the variant
                     description: "" + "\n   " + "This golden liquid has been carefully distilled from a rare and deadly plant usually found in the Feywild. A creature can use an action to feed the mixture to a humanoid that has died within the last hour. The dead creature returns to 1 hit point and immediately suffers one level of exhaustion.",
                     action: ["action"],
                 },
-                autoSelectExtrachoices: [{
-                        extrachoice: "Refreshing Herbs"
-                    },
-                    {
-                        extrachoice: "Prophetic Powder"
-                    },
-                    {
-                        extrachoice: "Regenerative Potion"
-                    },
-                    {
-                        extrachoice: "Tincture of Life"
-                    },
-                ]
+                toNotesPage : [{
+                    name : "Potent Mixture",
+                    note : [
+                        "\nThis collection of fresh and potent herbs can be ingested by a creature as a bonus action to remove all levels of exhaustion.",
+                        "\nThese dried and crushed rare flowers allow the user a supernatural glimpse of the immediate future. A creature can consume the powder as a bonus action. For the next minute, the creature has advantage on attack rolls, saving throws and ability checks.",
+                        "\nThis murky bottle contains a pickled troll eye. A creature can consume the potion as a bonus action. For the next minute, the creature regains 1d8 hit points at the start of each of its turns. This effect ceases to function if the creature takes any fire or acid damage.",
+                        "\nThis golden liquid has been carefully distilled from a rare and deadly plant usually found in the Feywild. A creature can use an action to feed the mixture to a humanoid that has died within the last hour. The dead creature returns to 1 hit point and immediately suffers one level of exhaustion.",                                                
+                    ]
+                }],
             },
         }
     }
