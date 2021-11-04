@@ -19,7 +19,6 @@ AddSubClass(
         features: {
 
             "subclassfeature3": {
-
                 name: "Harmonic Bond",
                 source: ["TCEE", 12],
                 minlevel: 3,
@@ -34,7 +33,6 @@ AddSubClass(
                 spellcastingBonus: {
                     spells: ["guidance"],
                     selection: ["guidance"],
-
                 },
             },
 
