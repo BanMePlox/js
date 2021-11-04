@@ -66,7 +66,7 @@ AddSubClass( // this is the function you will be calling to add the variant
                     name: "Burning Beeswax",
                     extraname: "Concotion",
                     source: ["TCEE", 35],
-                    description: "" + "\n   " + "",
+                    description: "" + "\n   " + "This caustic beeswax must be carefully handled. As an action, the wax can be applied to a weapon or piece of ammunition. For the next minute, a hit with the weapon or ammunition deals an additional 2d4 acid damage.",
                     action: ["action"],
                 },
                 "Death Bell": {
