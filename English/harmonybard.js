@@ -25,11 +25,14 @@ AddSubClass(
                 description: "\n   " + "You learn to link your allies with magical synergy to inspire themselves and each other to keep in the fight. When a creature that has a Bardic Inspiration die from you takes damage, it can roll the die and reduce the damage taken by an amount equal to that number plus your Charisma modifier" + "\n    " + "Alternatively, a creature with a Bardic Inspiration die from you can use its reaction to grant this benefit to another creature within 30 feet of it, when that other creature takes damage.",
             },
 
-            "subclassfeature31": {
+            "subclassfeature3.1": {
                 name: "Guided Initiative",
                 source: ["TCEE", 12],
                 minlevel: 3,
-                description: "\n	" + "You learn the guidance cantrip, which counts as a bard cantrip for you but doesn’t count against your number of bard cantrips known. For you, it has a range of 30 feet." + "\n	" + "Additionally, whenever you roll initiative, you can use your reaction to grant one creature other than yourself within 30 feet of you a 1d4 bonus to its initiative result",
+                description: desc([
+                    "You learn the guidance cantrip, which counts as a bard cantrip for you but doesn’t count against your number of bard cantrips known. For you, it has a range of 30 feet.",
+                    "Additionally, whenever you roll initiative, you can use your reaction to grant one creature other than yourself within 30 feet of you a 1d4 bonus to its initiative result",
+                ]),
                 spellcastingBonus: {
                     spells: ["guidance"],
                     selection: ["guidance"],
