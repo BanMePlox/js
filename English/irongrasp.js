@@ -4,7 +4,7 @@ AddSubClass(
 
     "monk",
 
-    "irongrasp",
+    "Iron Grasp",
 
     {
 
@@ -53,6 +53,13 @@ AddSubClass(
                 source: ["HB", 0],
                 minlevel: 11,
                 description: "\n   " + "If a creature or effect moves you against your will along the ground, you can use your reaction to reduce the distance you are moved by a number of feet up to half your speed.",
+            },
+            "subclassfeature11.2": {
+                name: "Colossal Grasp",
+                source: ["HB", 0],
+                minlevel: 11,
+                description: "\n   " + "You can use your Iron Grasp Technique to grapple creatures up to three size categories larger than you, rather than one, though you can't drag such a creature with you when you move.",
+                
             },
             "subclassfeature17": {
                 name: "Crushing Grasp",
